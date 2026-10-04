@@ -1,0 +1,416 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --yellow: #fff4b8;
+  --yellow-dark: #f4e58d;
+  --black: #111111;
+  --red: #e10600;
+  --white: #fffdf1;
+  --gray: #66615a;
+  --border: #1b1b1b;
+}
+
+body  {
+    background: var(--yellow);
+    color: var(--black);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* MAIN*/
+.calculator {
+    width: min(1100px, 92%);
+    margin: auto;
+    padding: 45px 0;
+}
+
+/*HEADER*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 3px solid var(--black);
+    padding-bottom: 30px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    font-weight: 1000;
+}
+
+h1 span {
+    color:var(--red);
+}
+
+.badge {
+    background: var(--black);
+    color: white;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.1;
+    font-weight: 900;
+    transform: rotate(3deg);
+}
+
+/* CALCULATOR*/
+
+.calculator-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 3px solid var(--black);
+    background: var(--white);
+    box-shadow: 12px 12px 0 var(--black);
+}
+
+/* INPUT SIDE */
+
+.inputs {
+    padding: 35px;
+    border-right: 3px soild var(--black);
+}
+
+.input-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 900;
+
+    border-bottom: 2px soild var(--black);
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+}
+
+.input-title span:last-child {
+    color: var(--red);
+}
+/*label*/
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 22px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+label span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+label strong {
+    color:var(--red)
+}
+
+label small {
+    color: var(--gray);
+}
+
+/* INPUT */
+
+.input-wrapper {
+    display: flex;
+    border: 2px solid var(--black);
+    background: var(--yellow-dark);
+}
+
+.input-wrapper input{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+    padding: 18px;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.input-wrapper span {
+    display:flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+/* BUTTON */
+
+button {
+   width: 100%;
+    margin-top: 30px;
+    border: 0;
+    padding: 20px;
+    background: var(--red);
+    color: white;
+    font-size: 16px;
+    font-weight: 1000;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+button:hover {
+    background: var(--black);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ERROR */
+
+.error {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 12px;
+    min-height: 15px;
+}
+
+/* RESULTS */
+
+.results{
+    padding: 35px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.result-header #status {
+    color: var(--red);
+}
+
+/* TRACK */
+
+.track {
+    position: relative;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.car {
+    font-size: 70px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.8s cubic-bezier(.17, .67, .3, 1.2);
+}
+.track-line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--black) 0px,
+        var(--black) 25px,
+        transparent 25px,
+        transparent 45px
+    );
+
+    bottom: 28px;
+}
+
+/* MAIN RESULT */
+
+.main-result {
+    border-top: 2px dashed #aaa;
+    border-bottom: 2px dashed #aaa;
+
+    padding: 25px 0;
+    text-align: center;
+}
+
+.main-result p {
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.main-result div {
+    margin-top: 5px;
+}
+
+.main-result strong {
+    font-size: clamp(45px, 6vw, 75px);
+    font-weight: 1000;
+    letter-spacing: -3px;
+}
+
+.main-result span {
+    color: var(--red);
+    font-weight: 1000;
+}
+
+/* STATS */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+}
+
+.stat{
+    border: 1px solid #aaa;
+
+    padding: 18px;
+
+    background: var(--yellow);
+}
+
+.stat span {
+    display: block;
+
+    font-size: 9px;
+    font-weight: 900;
+    color: var(--gray);
+    margin-bottom: 7px;
+}
+
+.stat strong {
+    font-size: 21px;
+}
+
+.stat small {
+    font-weight: 800;
+}
+
+/* MESSAGE */
+
+.message {
+    margin-top: 15px;
+    padding: 16px;
+    background: var(--black);
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+/* FORMULA */
+
+.formula {
+    margin-top: 55px;
+    border-left: 8px solid var(--red);
+    padding: 25px;
+    background: var(--yellow-dark);
+}
+
+.formula span {
+    font-size: 10px;
+    font-weight: 900;
+    color: var(--red);
+}
+
+.formula h2 {
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+.formula p {
+    max-width: 650px;
+    color: #4f4a40;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 3px soild var(--black);
+    margin-top: 55px;
+    padding-top: 25px;
+}
+
+footer span {
+    font-weight: 1000;
+}
+
+footer p {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* MOBITLE */
+
+@media (max-width: 750px) {
+    .calculator {
+        width: 94%;
+        padding-top: 25px;
+    }
+
+    .header {
+        align-items: center;
+    }
+
+    .badge {
+        width: 70px;
+        height: 70px;
+        font-size: 10px;
+    }
+
+    h1 {
+    font-size: 48px;
+    letter-spacing: -3px;
+    }
+   .calculator-box {
+     grid-template-columns: 1fr;
+     box-shadow: 7px 7px 0 var(--black);
+   }
+
+   .inputs {
+    border-right: 0;
+    border-bottom: 3px soild var(--black);
+   }
+
+   .stats {
+    grid-template-columns: 1fr 1fr;
+   }
+
+   footer {
+    flex-direction: column;
+    gap: 10px;
+   }
+}
+
+@media  (max-width: 450px) {
+    .badge {
+        display: none;
+    }
+
+    .inputs,
+    .results{
+        padding: 22px;
+    }
+
+    .main-result strong {
+        font-size: 48px;
+    }
+}

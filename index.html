@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Brake Force calculator</title>
+    <link rel="stylesheet"href="style.css">
+</head>
+<body>
+    <main class="calculator">
+        <!--HEADER--->
+        <header class="header">
+            <div>
+               <p class="eyebrow">F1 MECHLAB / 001</p>
+
+               <h1>
+    HOW HARD
+    <br>
+    <span>CAN YOU BRAKE?</span>
+</h1>
+            </div>
+
+            <div class="badge">
+                🏎️<br>
+                F1<br>
+                BRAKE
+            </div>
+        </header>
+
+        <!--MAIN CALCULATOR-->
+        <section class="calculator-box">
+
+            <div class="inputs">
+
+                <div class="input-title">
+                    <span>CAR PARAMETERS</span>
+                    <span>INPUT</span>
+                </div>
+
+                <!--MASS-->
+                <label>
+                    <span>
+                        <strong>01</strong>
+                        MASS
+                    </span>
+                    <small>kg</small>
+                </label>
+
+                <div class="input-wrapper">
+                    <input
+                    id="mass"
+                    type="number"
+                    value="800"
+                    min="1"
+                    placeholder="800"
+                    >
+                    <span>KG</span>
+                </div>
+                <!--SPEED-->
+                <label>
+                    <span>
+                     <strong>02</strong>
+                      SPEED
+                        </span>
+                         <small>km/h</small> 
+                </label>
+                <div class="input-wrapper">
+                    <input
+                    id="speed"
+                    type="number"
+                    value="200"
+                    min="1"
+                    placeholder="200"
+                    >
+                     <span>KM/H</span>
+                </div>
+
+                <!--DISTANCE-->
+                <label>
+                    <span>
+                        <strong>03</strong>
+                        BRAKING DISTANCE
+                    </span>
+                    <small>meters</small>
+                </label>
+
+                <div class="input-wrapper">
+                    <input
+                    id="distance"
+                    type="number"
+                    value="100"
+                    min="0.1"
+                    placeholder="100"
+                    >
+                    <span>M</span>
+                </div>
+
+                <button id="calculatebutton">
+                 <span>🛑</span>
+                 BRAKE NOW
+                </button>
+                <p id="error" class="error"></p>
+
+                </div>
+
+                <!--RESULT-->
+ <div class="results">
+
+    <div class="result-header">
+        <span>TELEMETRY</span>
+        <span id="status">READY</span>
+    </div>
+
+    <div class="track">
+        <div class="car" id="car">🏎️</div>
+        <div class="track-line"></div>
+    </div>
+
+    <div class="main-result">
+        <p>ESTIMATED BRAKING FORCE</p>
+
+        <div>
+            <strong id="force">0</strong>
+            <span>N</span>
+        </div>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <span>DECELERATION</span>
+            <strong id="deceleration">0.00</strong>
+            <small>m/s²</small>
+        </div>
+
+        <div class="stat">
+            <span>G-FORCE</span>
+            <strong id="gForce">0.00</strong>
+            <small>G</small>
+        </div>
+
+        <div class="stat">
+            <span>KINETIC ENERGY</span>
+            <strong id="energy">0.00</strong>
+            <small>MJ</small>
+        </div>
+
+        <div class="stat">
+            <span>STOPPING TIME</span>
+            <strong id="time">0.00</strong>
+            <small>SEC</small>
+        </div>
+
+    </div>
+
+    <div class="message" id="message">
+        Enter your numbers.<br>
+        Let's see what the tyres think about this. 👀
+    </div>
+
+</div>
+            </div>
+        </section>
+
+        <!--FORMULA-->
+        <section class="formula">
+            <span>ENGINEERING NOTE</span>
+            <h2>F = ma</h2>
+            <p>
+                This calculator uses a simplified constant-deceleration
+                model to estimate braking force
+            </p>
+        </section>
+
+        <!--FOOTER-->
+        <footer>
+            <span>F1 MECHLAB</span>
+            <p>Built for people who brake too late.💀</p>
+        </footer>
+
+        </main>
+
+        <script src="script.js"></script>
+</body>
+</html>
